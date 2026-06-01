@@ -4,86 +4,105 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>김두우리 | 통번역 · Tech 로컬화 · 프로덕션 PM</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #f7f5f0; --white: #ffffff; --dark: #1a1a1a;
-  --mid: #555; --muted: #999; --border: #e8e4dc;
-  --amber: #b8750a; --amber-bg: #fdf3e0; --amber-mid: #f0c060;
-  --teal: #0f6e56; --teal-bg: #e4f4ef;
-  --blue: #1a4f8a; --blue-bg: #e8f0fa;
-  --purple: #3c3489; --purple-bg: #eeedfe;
-  --r: 10px; --rs: 6px;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f5f0;--white:#fff;--dark:#1a1a1a;--mid:#555;--muted:#999;--border:#e8e4dc;
+  --amber:#b8750a;--amber-bg:#fdf3e0;--amber-mid:#f0c060;
+  --teal:#0f6e56;--teal-bg:#e4f4ef;
+  --blue:#1a4f8a;--blue-bg:#e8f0fa;
+  --purple:#3c3489;--purple-bg:#eeedfe;
+  --r:10px;--rs:6px;
 }
-body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.65; font-size: 15px; }
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark);line-height:1.65;font-size:15px}
 
-.hero { background: var(--dark); padding: 2.2rem 1.5rem 1.8rem; text-align: center; }
-.hero-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 8vw, 3.8rem); letter-spacing: 0.08em; color: var(--amber-mid); line-height: 1; margin-bottom: 0.4rem; }
-.hero-role { font-size: clamp(0.65rem, 2.2vw, 0.8rem); color: #aaa; letter-spacing: 0.14em; margin-bottom: 1rem; }
-.hero-langs { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
-.lang-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: #ccc; font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; }
+/* HERO */
+.hero{background:var(--dark);padding:2.2rem 1.5rem 1.8rem;text-align:center}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,8vw,3.8rem);letter-spacing:.08em;color:var(--amber-mid);line-height:1;margin-bottom:.4rem}
+.hero-role{font-size:clamp(.62rem,2vw,.78rem);color:#aaa;letter-spacing:.14em;margin-bottom:1rem}
+.hero-langs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.lang-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#ccc;font-size:.73rem;padding:4px 12px;border-radius:20px}
 
-.wrap { max-width: 800px; margin: 0 auto; padding: 0 1rem 4rem; }
+/* WRAP */
+.wrap{max-width:800px;margin:0 auto;padding:0 1rem 4rem}
 
-.chapter { display: flex; align-items: center; gap: 0.6rem; margin: 3rem 0 0.3rem; padding-bottom: 0.7rem; border-bottom: 2px solid var(--border); }
-.chapter-emoji { font-size: 1.4rem; }
-.chapter-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); letter-spacing: 0.06em; }
-.chapter-desc { font-size: 0.83rem; color: var(--mid); line-height: 1.75; margin-bottom: 0.7rem; }
+/* CHAPTER */
+.chapter{display:flex;align-items:center;gap:.6rem;margin:3rem 0 .3rem;padding-bottom:.7rem;border-bottom:2px solid var(--border)}
+.chapter-emoji{font-size:1.4rem}
+.chapter-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,5vw,2rem);letter-spacing:.06em}
+.chapter-desc{font-size:.83rem;color:var(--mid);line-height:1.75;margin-bottom:.7rem}
 
-.pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1rem; }
-.pill { font-size: 0.7rem; font-weight: 500; padding: 3px 9px; border-radius: 20px; letter-spacing: 0.02em; }
-.pa { background: var(--amber-bg); color: var(--amber); }
-.pt { background: var(--teal-bg); color: var(--teal); }
-.pb { background: var(--blue-bg); color: var(--blue); }
-.pp { background: var(--purple-bg); color: var(--purple); }
+/* PILLS */
+.pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem}
+.pill{font-size:.7rem;font-weight:500;padding:3px 9px;border-radius:20px;letter-spacing:.02em}
+.pa{background:var(--amber-bg);color:var(--amber)}
+.pt{background:var(--teal-bg);color:var(--teal)}
+.pb{background:var(--blue-bg);color:var(--blue)}
+.pp{background:var(--purple-bg);color:var(--purple)}
 
-.callout { border-left: 3px solid var(--blue); background: var(--blue-bg); border-radius: 0 var(--rs) var(--rs) 0; padding: 0.8rem 1rem; margin: 0.8rem 0 1rem; font-size: 0.82rem; color: #0e2d56; line-height: 1.7; }
-.callout strong { color: var(--blue); }
+/* CALLOUT */
+.callout{border-left:3px solid var(--blue);background:var(--blue-bg);border-radius:0 var(--rs) var(--rs) 0;padding:.8rem 1rem;margin:.8rem 0 1rem;font-size:.82rem;color:#0e2d56;line-height:1.7}
+.callout strong{color:var(--blue)}
 
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0.8rem 0 1rem; }
-.stat { background: var(--white); border: 1px solid var(--border); border-radius: var(--rs); padding: 0.6rem 0.5rem; text-align: center; }
-.stat-n { font-size: 1.25rem; font-weight: 700; color: var(--amber); line-height: 1.1; }
-.stat-l { font-size: 0.63rem; color: var(--muted); margin-top: 2px; }
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:.8rem 0 1rem}
+.stat{background:var(--white);border:1px solid var(--border);border-radius:var(--rs);padding:.6rem .5rem;text-align:center}
+.stat-n{font-size:1.2rem;font-weight:700;color:var(--amber);line-height:1.1}
+.stat-l{font-size:.62rem;color:var(--muted);margin-top:2px}
 
-.sublabel { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; margin: 1.6rem 0 0.7rem; }
-.sublabel::after { content:''; flex:1; height:1px; background: var(--border); }
+/* SUBLABEL */
+.sublabel{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;margin:1.6rem 0 .7rem}
+.sublabel::after{content:'';flex:1;height:1px;background:var(--border)}
 
-.card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.2rem; margin-bottom: 0.8rem; display: grid; grid-template-columns: 1fr 180px; gap: 1rem; align-items: start; transition: box-shadow 0.2s; }
-.card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-.card.no-img { grid-template-columns: 1fr; }
+/* CARD */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.2rem;margin-bottom:.8rem;display:grid;grid-template-columns:1fr 180px;gap:1rem;align-items:start;transition:box-shadow .2s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.card.no-img{grid-template-columns:1fr}
+.c-tag{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.c-title{font-size:.93rem;font-weight:700;color:var(--dark);line-height:1.4;margin-bottom:.2rem}
+.c-meta{font-size:.72rem;color:var(--muted);margin-bottom:.45rem}
+.c-body{font-size:.8rem;color:var(--mid);line-height:1.65}
+.c-body li{margin-left:1rem;margin-bottom:.18rem}
+.c-body strong{color:var(--dark)}
 
-.c-tag { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
-.c-title { font-size: 0.93rem; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 0.2rem; }
-.c-meta { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.45rem; }
-.c-body { font-size: 0.8rem; color: var(--mid); line-height: 1.65; }
-.c-body li { margin-left: 1rem; margin-bottom: 0.18rem; }
-.c-body strong { color: var(--dark); }
+/* VIDEO LINKS */
+.video-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:.6rem}
+.vlink{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;color:var(--blue);background:var(--blue-bg);padding:3px 10px;border-radius:20px;text-decoration:none;border:1px solid rgba(26,79,138,.2)}
+.vlink:hover{background:#d0e3f5}
 
-.c-img { width: 180px; height: 126px; border-radius: var(--rs); overflow: hidden; cursor: zoom-in; position: relative; background: var(--bg); }
-.c-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
-.c-img:hover img { transform: scale(1.06); }
-.c-img-hint { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: flex-end; padding: 6px; opacity: 0; transition: opacity 0.2s; }
-.c-img:hover .c-img-hint { opacity: 1; }
-.c-img-hint span { background: rgba(0,0,0,0.55); color: #fff; font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; }
+/* IMAGE */
+.c-img{width:180px;height:126px;border-radius:var(--rs);overflow:hidden;cursor:zoom-in;position:relative;background:var(--bg)}
+.c-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.c-img:hover img{transform:scale(1.06)}
+.zoom-hint{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:6px;opacity:0;transition:opacity .2s}
+.c-img:hover .zoom-hint{opacity:1}
+.zoom-hint span{background:rgba(0,0,0,.55);color:#fff;font-size:.6rem;padding:2px 6px;border-radius:4px}
 
-.lb { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; }
-.lb.on { display: flex; }
-.lb img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 6px; }
-.lb-x { position: absolute; top: 1rem; right: 1.2rem; color: #fff; font-size: 2rem; cursor: pointer; background: rgba(0,0,0,0.4); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+/* CLIENT LOGOS */
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--border)}
+.logos-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:100%}
+.logo-item{background:var(--bg);border:1px solid var(--border);border-radius:var(--rs);padding:6px 12px;font-size:.72rem;font-weight:500;color:var(--mid)}
 
-.cta { background: var(--dark); border-radius: var(--r); padding: 2rem 1.5rem; text-align: center; margin-top: 3rem; }
-.cta-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.08em; color: var(--amber-mid); margin-bottom: 0.35rem; }
-.cta-sub { font-size: 0.8rem; color: #aaa; margin-bottom: 1.2rem; }
-.cta-btn { display: inline-block; background: var(--amber); color: #fff; font-size: 0.85rem; font-weight: 700; padding: 0.7rem 1.8rem; border-radius: 6px; text-decoration: none; letter-spacing: 0.05em; }
-.cta-btn:hover { background: #9a6208; }
-.cta-email { margin-top: 0.7rem; font-size: 0.75rem; color: #777; }
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:6px}
+.lb-x{position:absolute;top:1rem;right:1.2rem;color:#fff;font-size:2rem;cursor:pointer;background:rgba(0,0,0,.4);width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%}
 
-@media (max-width: 580px) {
-  .card { grid-template-columns: 1fr; }
-  .c-img { width: 100%; height: 180px; order: -1; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .wrap { padding: 0 0.9rem 3rem; }
+/* CTA */
+.cta{background:var(--dark);border-radius:var(--r);padding:2rem 1.5rem;text-align:center;margin-top:3rem}
+.cta-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.08em;color:var(--amber-mid);margin-bottom:.35rem}
+.cta-sub{font-size:.8rem;color:#aaa;margin-bottom:1.2rem}
+.cta-btn{display:inline-block;background:var(--amber);color:#fff;font-size:.85rem;font-weight:700;padding:.7rem 1.8rem;border-radius:6px;text-decoration:none;letter-spacing:.05em}
+.cta-btn:hover{background:#9a6208}
+.cta-email{margin-top:.7rem;font-size:.75rem;color:#777}
+
+@media(max-width:580px){
+  .card{grid-template-columns:1fr}
+  .c-img{width:100%;height:180px;order:-1}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .wrap{padding:0 .9rem 3rem}
 }
 </style>
 </head>
@@ -109,17 +128,10 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
   </div>
   <p class="chapter-desc">Tech 서비스(앱·웹), STT 음성 데이터, GitHub 리드미, API integration · 5개 언어 동시 관리</p>
   <div class="pills">
-    <span class="pill pt">STT 음성 검수</span>
-    <span class="pill pt">학습 데이터 생성</span>
-    <span class="pill pt">오인식 키워드 분류</span>
-    <span class="pill pa">UI/UX 문구 현지화</span>
-    <span class="pill pa">CAT Tools</span>
-    <span class="pill pa">격주 패치 QA</span>
-    <span class="pill pb">Glossary 구축</span>
-    <span class="pill pb">GitHub 리드미</span>
-    <span class="pill pb">API integration 문서</span>
-    <span class="pill pp">번역 벤더 관리</span>
-    <span class="pill pp">한/영/불/일/아랍어</span>
+    <span class="pill pt">STT 음성 검수</span><span class="pill pt">학습 데이터 생성</span><span class="pill pt">오인식 키워드 분류</span>
+    <span class="pill pa">UI/UX 문구 현지화</span><span class="pill pa">CAT Tools</span><span class="pill pa">격주 패치 QA</span>
+    <span class="pill pb">Glossary 구축</span><span class="pill pb">GitHub 리드미</span><span class="pill pb">API integration</span>
+    <span class="pill pp">번역 벤더 관리</span><span class="pill pp">한/영/불/일/아랍어</span>
   </div>
 
   <div class="sublabel">최근 수행</div>
@@ -133,8 +145,13 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
         <li>가전제품 상담 음성 30개 (평균 10분, 최대 20분) 화자별 스크립트 검수</li>
         <li>AI 자동 STT 결과 정확도 검수 — 다빈도 오인식 키워드 분류</li>
         <li>오인식 키워드 기반 학습용 문장 데이터 생성</li>
-      </ul></div>
-    </div>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🏢 LG Electronics</span>
+        <span class="logo-item">🤖 LG AICC</span>
+      </div>
+      </div>
   </div>
 
   <div class="sublabel">주요 프로젝트</div>
@@ -148,11 +165,16 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
         <li>격주 패치 UI → 5개 언어 로컬화 → 최종 QA</li>
         <li>영문 브랜딩 Glossary · CAT Tool · 라이온브릿지 벤더 협업</li>
         <li>GitHub 리드미 6개 · API 연동 사례 11개 · Udemy 1,600+ 수강생</li>
-      </ul></div>
-    </div>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🔐 AI Spera</span>
+        <span class="logo-item">🦁 Lionbridge</span>
+      </div>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://static.wixstatic.com/media/3667e6_8be29bb38ac2425d80c98b8f8557e1ba~mv2.png" alt="Criminal IP">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
@@ -164,11 +186,15 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <div class="c-body"><ul>
         <li>한국 개발 소셜 앱 3개 전 단계 로컬화 총괄 · 60만+ 유저 달성</li>
         <li>벤치마킹 → 한-불 번역 → UX/UI QA → GTM 전략 수립</li>
-      </ul></div>
-    </div>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">📱 Ultra Interactive</span>
+      </div>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://static.wixstatic.com/media/3667e6_07564c76e2fb4a2ea44b4e7b3f47f77f~mv2.png" alt="Ultra Interactive 앱">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
@@ -179,14 +205,9 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
   </div>
   <p class="chapter-desc">엔터테인먼트, 문화 사업 & 행사, 기업 및 공공 기관 사업 미팅, 아티스트 홍보, 영화 시나리오 및 스크립트 · 2011년~ 프리랜서</p>
   <div class="pills">
-    <span class="pill pa">🇰🇷↔🇫🇷 순차·동시통역</span>
-    <span class="pill pa">🇰🇷↔🇬🇧 통역</span>
-    <span class="pill pa">🇧🇷↔🇫🇷 통역</span>
-    <span class="pill pt">기업 VIP 현장 통역</span>
-    <span class="pill pt">아티스트 투어 동행</span>
-    <span class="pill pt">영화제·공연 현장</span>
-    <span class="pill pb">영화 시나리오·자막</span>
-    <span class="pill pb">다큐 인터뷰 번역</span>
+    <span class="pill pa">🇰🇷↔🇫🇷 순차·동시통역</span><span class="pill pa">🇰🇷↔🇬🇧</span><span class="pill pa">🇧🇷↔🇫🇷</span>
+    <span class="pill pt">기업 VIP 현장 통역</span><span class="pill pt">아티스트 투어 동행</span><span class="pill pt">영화제·공연 현장</span>
+    <span class="pill pb">영화 시나리오·자막</span><span class="pill pb">다큐 인터뷰 번역</span>
     <span class="pill pp">PPM·프레스킷·STT</span>
   </div>
 
@@ -198,14 +219,18 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <div class="c-title">LG전자 트립 행사 — 프랑스 VIP 현장 순차통역</div>
       <div class="c-meta">서울 · 부산 · 마곡 · 하남 | 5박 6일</div>
       <div class="c-body"><ul>
-        <li>프랑스에서 방한한 LG전자 VIP를 위한 5박 일정 현장 통역</li>
         <li>LG 평택 칠러 공장 쇼룸·라인 투어, 창원 공장 제조 라인 투어</li>
         <li>하남 스타필드 레퍼런스 사이트 방문, 마곡 사이언스파크 시설 투어</li>
-      </ul></div>
-    </div>
+        <li>VIP 레스토랑 · 공식 만찬 · 서울 관광 전 일정 동행</li>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🏢 LG Electronics</span>
+      </div>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://raw.githubusercontent.com/dourikim/portfolio/main/img/lg_trip.jpg" alt="LG전자 트립 행사">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
@@ -219,11 +244,16 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <div class="c-body"><ul>
         <li>상파울루 주 산투안드레 시청 지속가능 프로젝트 통역 참여</li>
         <li>프랑스 리옹대학교 전문가 2인 대상 포르투갈어 ↔ 프랑스어 순차통역</li>
-      </ul></div>
-    </div>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🏛️ Prefeitura de Santo André</span>
+        <span class="logo-item">🎓 Université de Lyon</span>
+      </div>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://static.wixstatic.com/media/3667e6_d27f056b3f844ac6a3827e901b68eca4~mv2.jpeg" alt="Santo André 시청">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
@@ -235,28 +265,43 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <div class="c-body"><ul>
         <li>마르세유 국제영화제 FID Marseille에서 홍상수 감독 회고전 통역</li>
         <li>한국어 ↔ 프랑스어 순차통역</li>
-      </ul></div>
-    </div>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🎬 FID Marseille</span>
+      </div>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://static.wixstatic.com/media/3667e6_285bc810ab1b453ebbe15513d33a3375~mv2.jpeg" alt="FID Marseille 홍상수">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
   <div class="card">
     <div>
       <div class="c-tag">K-pop 아티스트 파리 · 2011–2012</div>
-      <div class="c-title">2NE1 · PSY · SM Town — 아티스트 투어 동행 통역</div>
+      <div class="c-title">2NE1 · PSY · SM Town — 아티스트 투어 동행</div>
       <div class="c-meta">🇫🇷 Cannes · Paris</div>
       <div class="c-body"><ul>
-        <li><strong>2NE1</strong> — 칸 영화제 Cannes Lions 컨퍼런스 동행 · 패션 매거진 W 화보 촬영 (2012)</li>
-        <li><strong>PSY</strong> — 갱남스타일 월드투어 파리 홍보 코디네이션 · Universal Music France (2012)</li>
-        <li><strong>SM Town</strong> — 파리 제니스 공연 조명팀 현장 코디네이션 (2011)</li>
-      </ul></div>
-    </div>
+        <li><strong>2NE1</strong> — 칸 Cannes Lions 컨퍼런스 동행 · 패션 매거진 W 화보 촬영 (2012)</li>
+        <li><strong>PSY</strong> — 갱남스타일 월드투어 파리 홍보 코디 · Universal Music France (2012)</li>
+        <li><strong>SM Town</strong> — 파리 제니스 공연 조명팀 코디네이션 (2011)</li>
+      </ul>
+      <div class="video-links">
+        <a class="vlink" href="https://bit.ly/WVkmHP" target="_blank">▶ 2NE1 Cannes Lions</a>
+        <a class="vlink" href="https://bit.ly/SQhrRd" target="_blank">▶ PSY 파리 투어</a>
+        <a class="vlink" href="https://bit.ly/jzxoZi" target="_blank">▶ SM Town 제니스</a>
+      </div>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🎤 YG Entertainment</span>
+        <span class="logo-item">🎵 Universal Music France</span>
+        <span class="logo-item">🎶 SM Entertainment</span>
+      </div>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://static.wixstatic.com/media/3667e6_72cac6dac863404d9ee730db96f70ea9~mv2.jpg" alt="K-pop 아티스트 파리">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
@@ -267,12 +312,12 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <div class="c-meta">🇨🇭🇰🇷 6개국 로케이션 (프/벨/독/스위스/스웨덴/한국)</div>
       <div class="c-body"><ul>
         <li>한국어 / 영어 / 프랑스어 인터뷰 번역 · 리뷰</li>
-        <li>로케이션 스카우팅 및 6개국 물류 관리</li>
-      </ul></div>
-    </div>
+        <li>로케이션 스카우팅 및 6개국 물류 관리 · 컨셉 기획 참여</li>
+      </ul>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://static.wixstatic.com/media/3667e6_c54de26c01874b0783c6a38299a89be4~mv2.jpeg" alt="나윤선 다큐">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
@@ -285,18 +330,14 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 
   <div class="callout">
     🎓 <strong>MBA in Audiovisual Production</strong> — ESG 그랑제꼴, 파리 (2012)<br>
-    <span style="font-size:0.78rem;opacity:0.85;">논문 : <em>What digital is going to change for film distributors and movie theater operators?</em></span>
+    <span style="font-size:.78rem;opacity:.85;">논문 : <em>What digital is going to change for film distributors and movie theater operators?</em></span>
   </div>
 
   <div class="pills">
-    <span class="pill pb">3D4K · VR · 360° 촬영</span>
-    <span class="pill pb">프랑스 노동법 행정</span>
-    <span class="pill pa">크루 50명+ 운영</span>
-    <span class="pill pa">예산·보조금 관리</span>
-    <span class="pill pt">콘티 번역·기술 조율</span>
-    <span class="pill pt">아티스트 프레스킷</span>
-    <span class="pill pp">DVD · 극장 상영</span>
-    <span class="pill pp">갤러리 대표·보조금</span>
+    <span class="pill pb">3D4K · VR · 360° 촬영</span><span class="pill pb">프랑스 노동법 행정</span>
+    <span class="pill pa">크루 50명+ 운영</span><span class="pill pa">예산·보조금 관리</span>
+    <span class="pill pt">콘티 번역·기술 조율</span><span class="pill pt">아티스트 프레스킷</span>
+    <span class="pill pp">DVD · 극장 상영</span><span class="pill pp">갤러리 대표·보조금</span>
   </div>
 
   <div class="stats">
@@ -317,11 +358,19 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
         <li>한국 촬영팀 콘티 번역 · 프랑스 오퍼레이션 팀 기술 세팅 조율</li>
         <li>프랑스 노동법 기반 크루 50명+ 고용·행정·재정 관리 총괄</li>
         <li>DVD 출시 · 한국 영화관 상영</li>
-      </ul></div>
-    </div>
+      </ul>
+      <div class="video-links">
+        <a class="vlink" href="https://vimeo.com/167142644" target="_blank">▶ Making of 3D4K (Vimeo)</a>
+      </div>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🎭 Dove Attia Productions</span>
+        <span class="logo-item">🎥 Keystone Live &amp; Films</span>
+      </div>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://static.wixstatic.com/media/3667e6_31de7d9826d04d9094fb1b9b9d72b207~mv2.png" alt="아서왕의 전설 공연">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
@@ -333,11 +382,19 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <div class="c-body"><ul>
         <li>신기술 미디어 전문 제작사 Fabulous와 협력, 3D4K 촬영 코디네이터</li>
         <li>2015 칸 영화제 Marché du Film 소개 · ScreenX 버전 제작</li>
-      </ul></div>
-    </div>
+      </ul>
+      <div class="video-links">
+        <a class="vlink" href="https://www.youtube.com/watch?v=fByplJymqQY" target="_blank">▶ Odysseo Trailer (YouTube)</a>
+      </div>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🎪 Cavalia / Cirque du Soleil</span>
+        <span class="logo-item">🎥 Fabulous</span>
+      </div>
+      </div>
     <div class="c-img" onclick="lb(this)">
       <img src="https://static.wixstatic.com/media/3667e6_7e2dda0a3a99478f969193ec23545401~mv2.jpeg" alt="Odysseo Cirque du Soleil">
-      <div class="c-img-hint"><span>크게 보기</span></div>
+      <div class="zoom-hint"><span>크게 보기</span></div>
     </div>
   </div>
 
@@ -351,8 +408,14 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <div class="c-body"><ul>
         <li>대한항공 주최 — 프랑스 7개 도시 독특한 숙박 경험 제공 콘테스트</li>
         <li>특별 숙소 리서치 · 예산 산정 · 현지 협상 · SNS 커뮤니케이션</li>
-      </ul></div>
-    </div>
+        <li>승인 후 키스톤 필름이 각 도시 트레일러 촬영</li>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">✈️ Korean Air</span>
+        <span class="logo-item">🎥 Keystone Live &amp; Films</span>
+      </div>
+      </div>
   </div>
 
   <div class="card no-img">
@@ -363,8 +426,34 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <div class="c-body"><ul>
         <li><strong>Nonotak Studio</strong> (건축·비주얼 퍼포먼스 듀오) — 한국 현대 갤러리 대표 · 보조금 신청</li>
         <li><strong>Marion Bataille</strong> (프랑스 일러스트레이터) — 한글 포함 타이포그래피 워크숍 · 아동 창의 교육</li>
-      </ul></div>
-    </div>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🎨 Nonotak Studio</span>
+        <span class="logo-item">📖 Marion Bataille</span>
+        <span class="logo-item">🇫🇷🇰🇷 한불 외교부</span>
+      </div>
+      </div>
+  </div>
+
+  <div class="card no-img">
+    <div>
+      <div class="c-tag">마케팅 · 2010–2012</div>
+      <div class="c-title">프랑스 디지털 음악 시장 — 마케팅 & 세일 어시스턴트</div>
+      <div class="c-meta">🇫🇷 파리 | Ciné Culture · UGC Networks</div>
+      <div class="c-body"><ul>
+        <li>MP3 다운로드 서비스 마케팅·세일즈 서포트 (유통사/프로듀서/서비스 운영사)</li>
+        <li>음원 홍보, 릴리즈 스케줄·웹/앱 스토어 관리, 의사 결정 리포트 제공</li>
+      </ul>
+      <div class="logos">
+        <span class="logos-label">클라이언트</span>
+        <span class="logo-item">🎬 UGC Networks</span>
+        <span class="logo-item">🎵 Ciné Culture</span>
+        <span class="logo-item">🏪 Fnac</span>
+        <span class="logo-item">🎧 Universal Music</span>
+        <span class="logo-item">📱 SFR</span>
+      </div>
+      </div>
   </div>
 
   <div class="cta">
@@ -380,14 +469,10 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
   <div class="lb-x" onclick="lbClose()">×</div>
   <img id="lb-img" src="" alt="">
 </div>
-
 <script>
-function lb(el) {
-  document.getElementById('lb-img').src = el.querySelector('img').src;
-  document.getElementById('lb').classList.add('on');
-}
-function lbClose() { document.getElementById('lb').classList.remove('on'); }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') lbClose(); });
+function lb(el){document.getElementById('lb-img').src=el.querySelector('img').src;document.getElementById('lb').classList.add('on')}
+function lbClose(){document.getElementById('lb').classList.remove('on')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lbClose()})
 </script>
 </body>
 </html>
