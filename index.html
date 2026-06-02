@@ -114,6 +114,45 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
   .stats{grid-template-columns:repeat(2,1fr)}
   .wrap{padding:0 .9rem 3rem}
 }
+
+/* STICKY NAV */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--white);
+  border-bottom: 1.5px solid var(--border);
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.nav-btn {
+  flex: 1;
+  max-width: 200px;
+  padding: .75rem .5rem;
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 2.5px solid transparent;
+  transition: all .2s;
+  letter-spacing: .02em;
+  font-family: 'Noto Sans KR', sans-serif;
+  white-space: nowrap;
+}
+.nav-btn:hover { color: var(--dark); }
+.nav-btn.active {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+  font-weight: 700;
+}
+@media(max-width:600px){
+  .nav-btn { font-size: .68rem; padding: .65rem .3rem; }
+}
+
 </style>
 </head>
 <body>
@@ -129,10 +168,17 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
   </div>
 </div>
 
+
+<nav class="sticky-nav" id="sticky-nav">
+  <button class="nav-btn active" onclick="scrollTo('interp')">🎙️ 통번역</button>
+  <button class="nav-btn" onclick="scrollTo('tech')">💻 Tech 로컬화</button>
+  <button class="nav-btn" onclick="scrollTo('prod')">🎬 프로덕션 PM</button>
+</nav>
+
 <div class="wrap">
 
 <!-- ══ 1. 통번역 ══ -->
-<div class="chapter">
+<div class="chapter" id="interp">
   <span class="chapter-emoji">🎙️</span>
   <span class="chapter-title">통번역 · 동시통역</span>
 </div>
@@ -368,7 +414,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 </div>
 
 <!-- ══ 2. TECH 로컬화 ══ -->
-<div class="chapter">
+<div class="chapter" id="tech">
   <span class="chapter-emoji">💻</span>
   <span class="chapter-title">Tech 로컬라이제이션</span>
 </div>
@@ -460,7 +506,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 </div>
 
 <!-- ══ 3. 프로덕션 PM ══ -->
-<div class="chapter">
+<div class="chapter" id="prod">
   <span class="chapter-emoji">🎬</span>
   <span class="chapter-title">프로덕션 PM</span>
 </div>
@@ -615,8 +661,38 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 function lb(el){document.getElementById('lb-img').src=el.querySelector('img').src;document.getElementById('lb').classList.add('on')}
 function lbClose(){document.getElementById('lb').classList.remove('on')}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lbClose()})
+
+function scrollTo(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const nav = document.getElementById('sticky-nav');
+  const offset = nav ? nav.offsetHeight + 8 : 8;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({top, behavior:'smooth'});
+}
+
+// IntersectionObserver로 현재 섹션 감지 → nav 버튼 active 업데이트
+const sections = ['interp','tech','prod'];
+const navBtns = document.querySelectorAll('.nav-btn');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      navBtns.forEach((btn,i) => {
+        btn.classList.toggle('active', sections[i] === id);
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if(el) observer.observe(el);
+});
 </script>
 </body>
 </html>
+
 
 
