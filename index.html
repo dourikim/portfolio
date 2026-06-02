@@ -16,36 +16,45 @@
   --r:10px;--rs:6px;
 }
 body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark);line-height:1.65;font-size:15px;overflow-x:hidden}
+
+/* HERO */
 .hero{background:var(--dark);padding:2.2rem 1.5rem 1.8rem;text-align:center}
 .hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,8vw,3.8rem);letter-spacing:.08em;color:var(--amber-mid);line-height:1;margin-bottom:.4rem}
 .hero-role{font-size:clamp(.62rem,2vw,.78rem);color:#aaa;letter-spacing:.14em;margin-bottom:1rem}
 .hero-langs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
 .lang-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#ccc;font-size:.73rem;padding:4px 12px;border-radius:20px}
+
 .wrap{max-width:800px;margin:0 auto;padding:0 1rem 4rem}
+
 .chapter{display:flex;align-items:center;gap:.6rem;margin:3rem 0 .3rem;padding-bottom:.7rem;border-bottom:2px solid var(--border)}
 .chapter-emoji{font-size:1.4rem}
 .chapter-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,5vw,2rem);letter-spacing:.06em}
 .chapter-desc{font-size:.83rem;color:var(--mid);line-height:1.75;margin-bottom:.7rem}
+
 .pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem}
 .pill{font-size:.7rem;font-weight:500;padding:3px 9px;border-radius:20px}
 .pa{background:var(--amber-bg);color:var(--amber)}
 .pt{background:var(--teal-bg);color:var(--teal)}
 .pb{background:var(--blue-bg);color:var(--blue)}
 .pp{background:var(--purple-bg);color:var(--purple)}
+
 .callout{border-left:3px solid var(--blue);background:var(--blue-bg);border-radius:0 var(--rs) var(--rs) 0;padding:.8rem 1rem;margin:.8rem 0 1rem;font-size:.82rem;color:#0e2d56;line-height:1.7}
 .callout strong{color:var(--blue)}
+
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:.8rem 0 1rem}
 .stat{background:var(--white);border:1px solid var(--border);border-radius:var(--rs);padding:.6rem .5rem;text-align:center}
 .stat-n{font-size:1.2rem;font-weight:700;color:var(--amber);line-height:1.1}
 .stat-l{font-size:.62rem;color:var(--muted);margin-top:2px}
+
 .sublabel{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;margin:1.6rem 0 .7rem}
 .sublabel::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* CARD - 핵심: overflow:hidden 으로 넘침 방지 */
-.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.2rem;margin-bottom:.8rem;overflow:hidden;transition:box-shadow .2s}
+/* CARD */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:.8rem;overflow:hidden;transition:box-shadow .2s}
 .card:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
-.card-inner{display:grid;grid-template-columns:1fr 180px;gap:1rem;align-items:start}
+.card-inner{display:grid;grid-template-columns:1fr 220px;gap:0;align-items:stretch}
 .card-inner.no-img{grid-template-columns:1fr}
+.card-text{padding:1rem 1.2rem}
 
 .c-tag{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
 .c-title{font-size:.93rem;font-weight:700;color:var(--dark);line-height:1.4;margin-bottom:.2rem}
@@ -54,30 +63,41 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 .c-body li{margin-left:1rem;margin-bottom:.18rem}
 .c-body strong{color:var(--dark)}
 
+/* VIDEO EMBED */
+.c-video{width:220px;flex-shrink:0;background:#000;position:relative}
+.c-video iframe{width:100%;height:100%;min-height:154px;border:none;display:block}
+.c-video.ratio{aspect-ratio:16/9}
+
+/* IMAGE */
+.c-img{width:220px;flex-shrink:0;background:var(--bg);overflow:hidden;cursor:zoom-in;position:relative}
+.c-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.c-img:hover img{transform:scale(1.05)}
+.zoom-hint{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.55);color:#fff;font-size:.6rem;padding:2px 6px;border-radius:4px;opacity:0;transition:opacity .2s}
+.c-img:hover .zoom-hint{opacity:1}
+
+/* VIDEO LINKS */
 .video-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:.6rem}
 .vlink{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;color:var(--blue);background:var(--blue-bg);padding:3px 9px;border-radius:20px;text-decoration:none;border:1px solid rgba(26,79,138,.15)}
 .vlink:hover{background:#d0e3f5}
 .vlink.yt{color:#c0392b;background:#fdecea;border-color:rgba(192,57,43,.15)}
 .vlink.yt:hover{background:#f9d5d3}
 
-.c-img{width:180px;height:126px;border-radius:var(--rs);overflow:hidden;cursor:zoom-in;position:relative;background:var(--bg);flex-shrink:0}
-.c-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-.c-img:hover img{transform:scale(1.06)}
-.zoom-hint{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.55);color:#fff;font-size:.6rem;padding:2px 6px;border-radius:4px;opacity:0;transition:opacity .2s}
-.c-img:hover .zoom-hint{opacity:1}
-
+/* LOGOS */
 .logos{margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--border)}
 .logos-label{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.logos-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.logo-img{height:26px;width:auto;max-width:80px;object-fit:contain;opacity:.8;transition:opacity .2s}
-.logo-img:hover{opacity:1}
-.logo-txt{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-size:.67rem;font-weight:500;color:var(--mid);white-space:nowrap}
+.logos-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.logo-txt{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:3px 9px;font-size:.68rem;font-weight:500;color:var(--mid);white-space:nowrap}
 
+/* CERT BADGE */
+.cert{display:inline-flex;align-items:center;gap:6px;background:var(--amber-bg);border:1px solid rgba(184,117,10,.2);border-radius:var(--rs);padding:5px 10px;font-size:.75rem;color:var(--amber);font-weight:500;margin-top:.5rem}
+
+/* LIGHTBOX */
 .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
 .lb.on{display:flex}
 .lb img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:6px}
 .lb-x{position:absolute;top:1rem;right:1.2rem;color:#fff;font-size:2rem;cursor:pointer;background:rgba(0,0,0,.4);width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%}
 
+/* CTA */
 .cta{background:var(--dark);border-radius:var(--r);padding:2rem 1.5rem;text-align:center;margin-top:3rem}
 .cta-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.08em;color:var(--amber-mid);margin-bottom:.35rem}
 .cta-sub{font-size:.8rem;color:#aaa;margin-bottom:1.2rem}
@@ -85,12 +105,14 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 .cta-btn:hover{background:#9a6208}
 .cta-email{margin-top:.7rem;font-size:.75rem;color:#777}
 
-@media(max-width:580px){
+@media(max-width:600px){
   .card-inner{grid-template-columns:1fr}
-  .c-img{width:100%;height:180px;order:-1}
+  .c-video,.c-img{width:100%}
+  .c-video{aspect-ratio:16/9;height:auto}
+  .c-video iframe{min-height:0;height:100%}
+  .c-img{height:200px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .wrap{padding:0 .9rem 3rem}
-  .hero-name{font-size:2rem}
 }
 </style>
 </head>
@@ -98,7 +120,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 <div class="hero">
   <div class="hero-name">김두우리 · Douri Kim</div>
-  <div class="hero-role">TECH LOCALIZATION · INTERPRETATION · PRODUCTION PM</div>
+  <div class="hero-role">INTERPRETATION · TECH LOCALIZATION · PRODUCTION PM</div>
   <div class="hero-langs">
     <span class="lang-pill">🇰🇷 한국어</span>
     <span class="lang-pill">🇫🇷 Français</span>
@@ -109,118 +131,56 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 <div class="wrap">
 
-<!-- ══ 1. TECH 로컬화 ══ -->
-<div class="chapter">
-  <span class="chapter-emoji">💻</span>
-  <span class="chapter-title">Tech 로컬라이제이션</span>
-</div>
-<p class="chapter-desc">Tech 서비스(앱·웹), STT 음성 데이터, GitHub 리드미, API integration · 5개 언어 동시 관리</p>
-<div class="pills">
-  <span class="pill pt">STT 음성 검수</span><span class="pill pt">학습 데이터 생성</span><span class="pill pt">오인식 키워드 분류</span>
-  <span class="pill pa">UI/UX 문구 현지화</span><span class="pill pa">CAT Tools</span><span class="pill pa">격주 패치 QA</span>
-  <span class="pill pb">Glossary 구축</span><span class="pill pb">GitHub 리드미</span><span class="pill pb">API integration</span>
-  <span class="pill pp">번역 벤더 관리</span><span class="pill pp">한/영/불/일/아랍어</span>
-</div>
-
-<div class="sublabel">최근 수행</div>
-
-<div class="card">
-  <div class="card-inner no-img">
-    <div>
-      <div class="c-tag">STT 품질 향상 · 2025</div>
-      <div class="c-title">LG AICC — 벨기에 🇧🇪 프랑스어 STT 검수</div>
-      <div class="c-meta">LG전자 AICC | 벨기에 (프랑스어)</div>
-      <div class="c-body">
-        <ul>
-          <li>가전제품 상담 음성 30개 (평균 10분, 최대 20분) 화자별 스크립트 검수</li>
-          <li>AI 자동 STT 결과 정확도 검수 — 다빈도 오인식 키워드 분류</li>
-          <li>오인식 키워드 기반 학습용 문장 데이터 생성</li>
-        </ul>
-        <div class="logos">
-          <div class="logos-label">클라이언트</div>
-          <div class="logos-row">
-            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LG_logo_%282015%29.svg/320px-LG_logo_%282015%29.svg.png" alt="LG">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="sublabel">주요 프로젝트</div>
-
-<div class="card">
-  <div class="card-inner">
-    <div>
-      <div class="c-tag">사이버보안 SaaS · 2023–2024</div>
-      <div class="c-title">AI Spera — Criminal IP 글로벌 로컬화 총괄</div>
-      <div class="c-meta">한 / 영 / 불 / 일 / 아랍어 5개국어</div>
-      <div class="c-body">
-        <ul>
-          <li>격주 패치 UI → 5개 언어 로컬화 → 최종 QA · Glossary · CAT Tool</li>
-          <li>라이온브릿지 벤더 협업 · GitHub 리드미 6개 · API 연동 사례 11개</li>
-          <li>Bleeping Computer 독점 아티클 9건 · Udemy 강좌 1,600+ 수강생</li>
-        </ul>
-        <div class="logos">
-          <div class="logos-label">미디어 / 파트너</div>
-          <div class="logos-row">
-            <span class="logo-txt">Bleeping Computer</span>
-            <span class="logo-txt">🦁 Lionbridge</span>
-            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Udemy_logo.svg/320px-Udemy_logo.svg.png" alt="Udemy">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="c-img" onclick="lb(this)">
-      <img src="https://raw.githubusercontent.com/dourikim/portfolio/main/img/criminal_ip.jpg" alt="Criminal IP on Bleeping Computer">
-      <span class="zoom-hint">크게 보기</span>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-inner">
-    <div>
-      <div class="c-tag">모바일 앱 로컬화 · 2013–2014</div>
-      <div class="c-title">Ultra Interactive — 프랑스어 로컬화 코디네이터</div>
-      <div class="c-meta">🇰🇷→🇫🇷 | 서울 & 파리</div>
-      <div class="c-body">
-        <ul>
-          <li>한국 개발 소셜 앱 3개 전 단계 로컬화 총괄 · 60만+ 유저 달성</li>
-          <li>벤치마킹 → 한-불 번역 → UX/UI QA → GTM 전략 수립</li>
-          <li>블로그/이메일/SNS 콘텐츠 기획 · FB 광고 · B2C 파트너십</li>
-        </ul>
-        <div class="logos">
-          <div class="logos-label">클라이언트</div>
-          <div class="logos-row"><span class="logo-txt">📱 Ultra Interactive</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="c-img" onclick="lb(this)">
-      <img src="https://static.wixstatic.com/media/3667e6_07564c76e2fb4a2ea44b4e7b3f47f77f~mv2.png" alt="Ultra Interactive 앱">
-      <span class="zoom-hint">크게 보기</span>
-    </div>
-  </div>
-</div>
-
-<!-- ══ 2. 통번역 ══ -->
+<!-- ══ 1. 통번역 ══ -->
 <div class="chapter">
   <span class="chapter-emoji">🎙️</span>
   <span class="chapter-title">통번역 · 동시통역</span>
 </div>
 <p class="chapter-desc">엔터테인먼트, 문화 사업 & 행사, 기업 및 공공 기관 사업 미팅, 아티스트 홍보, 영화 시나리오 및 스크립트 · 2011년~ 프리랜서</p>
 <div class="pills">
-  <span class="pill pa">🇰🇷↔🇫🇷 순차·동시통역</span><span class="pill pa">🇰🇷↔🇬🇧</span><span class="pill pa">🇧🇷↔🇫🇷</span>
-  <span class="pill pt">기업 VIP 현장 통역</span><span class="pill pt">아티스트 투어 동행</span><span class="pill pt">영화제·공연 현장</span>
-  <span class="pill pb">영화 시나리오·자막</span><span class="pill pb">다큐 인터뷰 번역</span>
-  <span class="pill pp">PPM·프레스킷·STT</span>
+  <span class="pill pa">🇰🇷↔🇫🇷 순차·동시통역</span>
+  <span class="pill pa">🇰🇷↔🇬🇧</span>
+  <span class="pill pa">🇧🇷↔🇫🇷</span>
+  <span class="pill pt">기업 VIP 현장 통역</span>
+  <span class="pill pt">아티스트 투어 동행</span>
+  <span class="pill pt">영화제·공연 현장</span>
+  <span class="pill pb">영화 시나리오·자막</span>
+  <span class="pill pb">다큐 인터뷰 번역</span>
+  <span class="pill pp">PPM·웹사이트·STT</span>
+</div>
+
+<div class="sublabel">자격 및 수료</div>
+
+<div class="card">
+  <div class="card-inner no-img">
+    <div class="card-text">
+      <div class="c-tag">영상번역 교육</div>
+      <div class="c-title">함혜숙 영어 영상번역 입문 과정 수료</div>
+      <div class="c-meta">아카데미 누벨 (Academy Nouvelle) | 온라인 (Zoom)</div>
+      <div class="c-body">
+        <ul>
+          <li>영어→한국어 영상번역가 입문 과정 — 극장·VOD·OTT 영상물 번역 기본기 습득</li>
+          <li>영상번역의 특수성 이해 (화면 싱크, 두 줄 제한, 구어체 표현) · 실전 피드백 중심 트레이닝</li>
+          <li>영화·다큐멘터리·시리즈 장르별 번역 실습</li>
+        </ul>
+        <div class="cert">🎓 수료증 취득 — 아카데미 누벨 영어 영상번역 입문반</div>
+        <div class="logos" style="margin-top:.7rem">
+          <div class="logos-label">기관</div>
+          <div class="logos-row">
+            <span class="logo-txt">🎬 아카데미 누벨</span>
+            <span class="logo-txt">강사 함혜숙</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="sublabel">최근 수행</div>
 
 <div class="card">
   <div class="card-inner">
-    <div>
+    <div class="card-text">
       <div class="c-tag">기업 VIP 행사 · 2025</div>
       <div class="c-title">LG전자 트립 행사 — 프랑스 VIP 현장 순차통역</div>
       <div class="c-meta">서울 · 부산 · 마곡 · 하남 | 5박 6일</div>
@@ -232,9 +192,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
         </ul>
         <div class="logos">
           <div class="logos-label">클라이언트</div>
-          <div class="logos-row">
-            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LG_logo_%282015%29.svg/320px-LG_logo_%282015%29.svg.png" alt="LG">
-          </div>
+          <div class="logos-row"><span class="logo-txt">LG Electronics</span></div>
         </div>
       </div>
     </div>
@@ -248,8 +206,37 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 <div class="sublabel">문화 · 엔터테인먼트</div>
 
 <div class="card">
+  <div class="card-inner no-img">
+    <div class="card-text">
+      <div class="c-tag">영한 번역 · 2011~</div>
+      <div class="c-title">한-불 영상·문화 콘텐츠 번역 — PPM · 자막 · 시나리오</div>
+      <div class="c-meta">🇫🇷🇰🇷 파리 & 서울 | 프리랜서, 2011년~</div>
+      <div class="c-body">
+        <ul>
+          <li>PPM(Pre-Production Meeting) 문서, 웹사이트, 자막, 시나리오/스크립트 번역</li>
+          <li>아티스트 인터뷰, 문화 행사 평론, 아티스트 프레스킷</li>
+        </ul>
+        <div class="video-links">
+          <a class="vlink" href="https://vimeo.com/163267082" target="_blank">▶ 번역 레퍼런스 (Vimeo)</a>
+        </div>
+        <div class="logos">
+          <div class="logos-label">클라이언트</div>
+          <div class="logos-row">
+            <span class="logo-txt">🎷 자라섬 Jazz Festival</span>
+            <span class="logo-txt">The French Connection</span>
+            <span class="logo-txt">Elephant at Work</span>
+            <span class="logo-txt">Renault-Samsung</span>
+            <span class="logo-txt">BNP Paribas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
   <div class="card-inner">
-    <div>
+    <div class="card-text">
       <div class="c-tag">공공 기관 · 2021</div>
       <div class="c-title">Santo André 시청 — 지속가능 도시 모빌리티 PT↔FR</div>
       <div class="c-meta">🇧🇷 Santo André, São Paulo</div>
@@ -262,7 +249,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
           <div class="logos-label">클라이언트</div>
           <div class="logos-row">
             <span class="logo-txt">🏛️ Prefeitura de Santo André</span>
-            <span class="logo-txt">🎓 Université de Lyon</span>
+            <span class="logo-txt">Université de Lyon</span>
           </div>
         </div>
       </div>
@@ -276,7 +263,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 <div class="card">
   <div class="card-inner">
-    <div>
+    <div class="card-text">
       <div class="c-tag">영화제 · 2016</div>
       <div class="c-title">FID Marseille — 홍상수 감독 회고전</div>
       <div class="c-meta">🇫🇷 Festival International de Documentaire, Marseille</div>
@@ -300,7 +287,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 <div class="card">
   <div class="card-inner">
-    <div>
+    <div class="card-text">
       <div class="c-tag">K-pop 아티스트 파리 · 2011–2012</div>
       <div class="c-title">2NE1 · PSY · SM Town — 아티스트 투어 동행</div>
       <div class="c-meta">🇫🇷 Cannes · Paris</div>
@@ -319,7 +306,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
           <div class="logos-label">클라이언트</div>
           <div class="logos-row">
             <span class="logo-txt">YG Entertainment</span>
-            <img class="logo-img" src="https://static.wixstatic.com/media/3667e6_bd663ff5f8c64e40a78ee4ebc11a2b3c~mv2.png" alt="Universal Music France">
+            <span class="logo-txt">Universal Music France</span>
             <span class="logo-txt">SM Entertainment</span>
           </div>
         </div>
@@ -334,7 +321,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 <div class="card">
   <div class="card-inner">
-    <div>
+    <div class="card-text">
       <div class="c-tag">다큐멘터리 · 2011</div>
       <div class="c-title">나윤선 — 스위스·한국 공동제작 다큐 번역 코디</div>
       <div class="c-meta">🇨🇭🇰🇷 6개국 로케이션 (프/벨/독/스위스/스웨덴/한국)</div>
@@ -354,7 +341,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 <div class="card">
   <div class="card-inner no-img">
-    <div>
+    <div class="card-text">
       <div class="c-tag">페스티벌 어시스턴트 · 2009</div>
       <div class="c-title">자라섬 국제 재즈 페스티벌 — 아트 디렉터 어시스턴트</div>
       <div class="c-meta">🇰🇷 가평 · 제6회 | 3일간 15만 관객 · 5개 무대 · 50개 공연</div>
@@ -372,12 +359,104 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
   </div>
 </div>
 
+<!-- ══ 2. TECH 로컬화 ══ -->
+<div class="chapter">
+  <span class="chapter-emoji">💻</span>
+  <span class="chapter-title">Tech 로컬라이제이션</span>
+</div>
+<p class="chapter-desc">Tech 서비스(앱·웹), STT 음성 데이터, GitHub 리드미, API integration · 5개 언어 동시 관리</p>
+<div class="pills">
+  <span class="pill pt">STT 음성 검수</span><span class="pill pt">학습 데이터 생성</span><span class="pill pt">오인식 키워드 분류</span>
+  <span class="pill pa">UI/UX 문구 현지화</span><span class="pill pa">CAT Tools</span><span class="pill pa">격주 패치 QA</span>
+  <span class="pill pb">Glossary 구축</span><span class="pill pb">GitHub 리드미</span><span class="pill pb">API integration</span>
+  <span class="pill pp">번역 벤더 관리</span><span class="pill pp">한/영/불/일/아랍어</span>
+</div>
+
+<div class="sublabel">최근 수행</div>
+
+<div class="card">
+  <div class="card-inner no-img">
+    <div class="card-text">
+      <div class="c-tag">STT 품질 향상 · 2025</div>
+      <div class="c-title">LG AICC — 벨기에 🇧🇪 프랑스어 STT 검수</div>
+      <div class="c-meta">LG전자 AICC | 벨기에 (프랑스어)</div>
+      <div class="c-body">
+        <ul>
+          <li>가전제품 상담 음성 30개 (평균 10분, 최대 20분) 화자별 스크립트 검수</li>
+          <li>AI 자동 STT 결과 정확도 검수 — 다빈도 오인식 키워드 분류</li>
+          <li>오인식 키워드 기반 학습용 문장 데이터 생성</li>
+        </ul>
+        <div class="logos">
+          <div class="logos-label">클라이언트</div>
+          <div class="logos-row"><span class="logo-txt">LG Electronics</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sublabel">주요 프로젝트</div>
+
+<div class="card">
+  <div class="card-inner">
+    <div class="card-text">
+      <div class="c-tag">사이버보안 SaaS · 2023–2024</div>
+      <div class="c-title">AI Spera — Criminal IP 글로벌 로컬화 총괄</div>
+      <div class="c-meta">한 / 영 / 불 / 일 / 아랍어 5개국어</div>
+      <div class="c-body">
+        <ul>
+          <li>격주 패치 UI → 5개 언어 로컬화 → 최종 QA · Glossary · CAT Tool</li>
+          <li>라이온브릿지 벤더 협업 · GitHub 리드미 6개 · API 연동 사례 11개</li>
+          <li>Bleeping Computer 독점 아티클 9건 · Udemy 강좌 1,600+ 수강생</li>
+        </ul>
+        <div class="logos">
+          <div class="logos-label">클라이언트 / 파트너</div>
+          <div class="logos-row">
+            <span class="logo-txt">AI Spera</span>
+            <span class="logo-txt">Lionbridge</span>
+            <span class="logo-txt">Bleeping Computer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="c-img" onclick="lb(this)">
+      <img src="https://raw.githubusercontent.com/dourikim/portfolio/main/img/criminal_ip.jpg" alt="Criminal IP on Bleeping Computer">
+      <span class="zoom-hint">크게 보기</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-inner">
+    <div class="card-text">
+      <div class="c-tag">모바일 앱 로컬화 · 2013–2014</div>
+      <div class="c-title">Ultra Interactive — 프랑스어 로컬화 코디네이터</div>
+      <div class="c-meta">🇰🇷→🇫🇷 | 서울 & 파리</div>
+      <div class="c-body">
+        <ul>
+          <li>한국 개발 소셜 앱 3개 전 단계 로컬화 총괄 · 60만+ 유저 달성</li>
+          <li>벤치마킹 → 한-불 번역 → UX/UI QA → GTM 전략 수립</li>
+          <li>블로그/이메일/SNS 콘텐츠 기획 · FB 광고 · B2C 파트너십</li>
+        </ul>
+        <div class="logos">
+          <div class="logos-label">클라이언트</div>
+          <div class="logos-row"><span class="logo-txt">📱 Ultra Interactive</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="c-img" onclick="lb(this)">
+      <img src="https://static.wixstatic.com/media/3667e6_07564c76e2fb4a2ea44b4e7b3f47f77f~mv2.png" alt="Ultra Interactive 앱">
+      <span class="zoom-hint">크게 보기</span>
+    </div>
+  </div>
+</div>
+
 <!-- ══ 3. 프로덕션 PM ══ -->
 <div class="chapter">
   <span class="chapter-emoji">🎬</span>
   <span class="chapter-title">프로덕션 PM</span>
 </div>
-<p class="chapter-desc">뮤지컬 촬영, 광고 영상, 아티스트 투어, 마케팅 이벤트, 문화 갤러리 프로젝트 · 한-불 크로스보더 2011~2016</p>
+<p class="chapter-desc">뮤지컬 촬영, 광고 영상, 아티스트 투어, 마케팅 이벤트 · 한-불 크로스보더 2011~2016</p>
 <div class="callout">
   🎓 <strong>MBA in Audiovisual Production</strong> — ESG 그랑제꼴, 파리 (2012)<br>
   <span style="font-size:.78rem;opacity:.85;">논문 : <em>What digital is going to change for film distributors and movie theater operators?</em></span>
@@ -386,7 +465,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
   <span class="pill pb">3D4K · VR · 360° 촬영</span><span class="pill pb">프랑스 노동법 행정</span>
   <span class="pill pa">크루 50명+ 운영</span><span class="pill pa">예산·보조금 관리</span>
   <span class="pill pt">콘티 번역·기술 조율</span><span class="pill pt">아티스트 프레스킷</span>
-  <span class="pill pp">DVD · 극장 상영</span><span class="pill pp">갤러리 대표·보조금</span>
+  <span class="pill pp">DVD · 극장 상영</span>
 </div>
 <div class="stats">
   <div class="stat"><div class="stat-n">50+</div><div class="stat-l">크루 인원</div></div>
@@ -399,7 +478,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 <div class="card">
   <div class="card-inner">
-    <div>
+    <div class="card-text">
       <div class="c-tag">3D4K 촬영 · 2016</div>
       <div class="c-title">뮤지컬 '아서왕의 전설' 3D4K — 1st 어시스턴트 총괄</div>
       <div class="c-meta">🇫🇷 파리 팔레 데 콩그레 (3,700석)</div>
@@ -409,28 +488,25 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
           <li>프랑스 노동법 기반 크루 50명+ 고용·행정·재정 관리 총괄</li>
           <li>DVD 출시 · 한국 영화관 상영</li>
         </ul>
-        <div class="video-links">
-          <a class="vlink" href="https://vimeo.com/167142644" target="_blank">▶ Making of 3D4K (Vimeo)</a>
-        </div>
         <div class="logos">
           <div class="logos-label">클라이언트</div>
           <div class="logos-row">
-            <span class="logo-txt">🎭 Dove Attia Productions</span>
-            <span class="logo-txt">🎥 Keystone Live &amp; Films</span>
+            <span class="logo-txt">Dove Attia Productions</span>
+            <span class="logo-txt">Keystone Live &amp; Films</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="c-img" onclick="lb(this)">
-      <img src="https://static.wixstatic.com/media/3667e6_31de7d9826d04d9094fb1b9b9d72b207~mv2.png" alt="아서왕의 전설">
-      <span class="zoom-hint">크게 보기</span>
+    <div class="c-video">
+      <iframe src="https://player.vimeo.com/video/167142644?autoplay=0&title=0&byline=0&portrait=0"
+        allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </div>
 
 <div class="card">
   <div class="card-inner">
-    <div>
+    <div class="card-text">
       <div class="c-tag">3D4K 촬영 · 2015</div>
       <div class="c-title">Cirque du Soleil 'Odysseo' — 촬영 코디네이터</div>
       <div class="c-meta">🇺🇸 미국 현지 촬영 | Cavalia × Fabulous 공동제작</div>
@@ -439,21 +515,18 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
           <li>신기술 미디어 전문 제작사 Fabulous와 협력, 3D4K 촬영 코디네이터</li>
           <li>2015 칸 영화제 Marché du Film 소개 · ScreenX 버전 제작</li>
         </ul>
-        <div class="video-links">
-          <a class="vlink yt" href="https://www.youtube.com/watch?v=3ZE0bOopPmU" target="_blank">▶ Odysseo Trailer</a>
-        </div>
         <div class="logos">
           <div class="logos-label">클라이언트</div>
           <div class="logos-row">
-            <span class="logo-txt">🎪 Cavalia / Cirque du Soleil</span>
-            <span class="logo-txt">🎥 Fabulous</span>
+            <span class="logo-txt">Cavalia / Cirque du Soleil</span>
+            <span class="logo-txt">Fabulous</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="c-img" onclick="lb(this)">
-      <img src="https://static.wixstatic.com/media/3667e6_7e2dda0a3a99478f969193ec23545401~mv2.jpeg" alt="Odysseo">
-      <span class="zoom-hint">크게 보기</span>
+    <div class="c-video">
+      <iframe src="https://www.youtube.com/embed/3ZE0bOopPmU?rel=0"
+        allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </div>
@@ -461,8 +534,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 <div class="sublabel">문화 프로젝트 · 아티스트 투어</div>
 
 <div class="card">
-  <div class="card-inner no-img">
-    <div>
+  <div class="card-inner">
+    <div class="card-text">
       <div class="c-tag">Korean Air 프로젝트 · 2015</div>
       <div class="c-title">Korean Air 'Guest House' — 프랑스 7개 도시 코디네이터</div>
       <div class="c-meta">🇫🇷 프랑스 7개 도시</div>
@@ -472,44 +545,18 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
           <li>특별 숙소 리서치 · 예산 산정 · 현지 협상 · SNS 커뮤니케이션</li>
           <li>승인 후 키스톤 필름이 각 도시 트레일러 촬영</li>
         </ul>
-        <div class="video-links">
-          <a class="vlink yt" href="https://www.youtube.com/channel/UCKfxr9T74fPX-GA6ZEWhxPQ" target="_blank">▶ Korean Air YouTube</a>
-        </div>
         <div class="logos">
           <div class="logos-label">클라이언트</div>
           <div class="logos-row">
-            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Korean_Air_Logo.svg/320px-Korean_Air_Logo.svg.png" alt="Korean Air">
-            <span class="logo-txt">🎥 Keystone Live &amp; Films</span>
+            <span class="logo-txt">✈️ Korean Air</span>
+            <span class="logo-txt">Keystone Live &amp; Films</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-inner no-img">
-    <div>
-      <div class="c-tag">갤러리 · 한불 외교 130주년 · 2015</div>
-      <div class="c-title">Nonotak Studio / Marion Bataille — 한국 대표 및 워크숍</div>
-      <div class="c-meta">🇫🇷🇰🇷 한불 외교 130주년 기념 문화 사업</div>
-      <div class="c-body">
-        <ul>
-          <li><strong>Nonotak Studio</strong> — 한국 현대 갤러리 대표 · 보조금 신청</li>
-          <li><strong>Marion Bataille</strong> — 한글 포함 타이포그래피 워크숍 · 아동 창의 교육</li>
-        </ul>
-        <div class="video-links">
-          <a class="vlink yt" href="https://www.youtube.com/watch?v=J3PfruiRu8c&t=3s" target="_blank">▶ Nonotak / Marion Bataille</a>
-        </div>
-        <div class="logos">
-          <div class="logos-label">클라이언트</div>
-          <div class="logos-row">
-            <span class="logo-txt">🎨 Nonotak Studio</span>
-            <span class="logo-txt">📖 Marion Bataille</span>
-            <span class="logo-txt">🤝 한불 외교부 130주년</span>
-          </div>
-        </div>
-      </div>
+    <div class="c-video">
+      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCKfxr9T74fPX-GA6ZEWhxPQ&rel=0"
+        allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </div>
@@ -518,7 +565,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 <div class="card">
   <div class="card-inner no-img">
-    <div>
+    <div class="card-text">
       <div class="c-tag">인턴십 · 2011–2012</div>
       <div class="c-title">프랑스 디지털 음악 시장 — Mp3 마케팅 어시스턴트</div>
       <div class="c-meta">🇫🇷 파리 | Ciné Culture · UGC Networks · SFR · Fnac</div>
@@ -531,11 +578,12 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
         <div class="logos">
           <div class="logos-label">클라이언트</div>
           <div class="logos-row">
-            <img class="logo-img" src="https://static.wixstatic.com/media/3667e6_bd663ff5f8c64e40a78ee4ebc11a2b3c~mv2.png" alt="Universal Music France">
-            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Fnac_logo_%282011%29.svg/320px-Fnac_logo_%282011%29.svg.png" alt="Fnac" style="height:20px">
-            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/168px-Spotify_logo_without_text.svg.png" alt="Spotify">
-            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Deezer_logo.svg/320px-Deezer_logo.svg.png" alt="Deezer">
+            <span class="logo-txt">Universal Music France</span>
+            <span class="logo-txt">Fnac</span>
             <span class="logo-txt">SFR</span>
+            <span class="logo-txt">Spotify</span>
+            <span class="logo-txt">Deezer</span>
+            <span class="logo-txt">UGC Networks</span>
           </div>
         </div>
       </div>
