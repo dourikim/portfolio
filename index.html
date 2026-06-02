@@ -116,6 +116,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 }
 
 /* STICKY NAV */
+html, body { scroll-behavior: smooth; }
 .sticky-nav {
   position: sticky;
   top: 0;
@@ -123,34 +124,45 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
   background: var(--white);
   border-bottom: 1.5px solid var(--border);
   display: flex;
-  justify-content: center;
+  justify-content: stretch;
   box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
 .nav-btn {
   flex: 1;
-  max-width: 200px;
-  padding: .75rem .5rem;
-  font-size: .75rem;
+  padding: .75rem .4rem;
+  font-size: .74rem;
   font-weight: 500;
   color: var(--muted);
   text-align: center;
   cursor: pointer;
   border: none;
-  background: none;
   border-bottom: 2.5px solid transparent;
-  transition: all .2s;
-  letter-spacing: .02em;
+  background: none;
+  transition: color .15s, border-color .15s;
   font-family: 'Noto Sans KR', sans-serif;
   white-space: nowrap;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.nav-btn:hover { color: var(--dark); }
+.nav-btn:hover { color: var(--dark); background: var(--bg); }
 .nav-btn.active {
   color: var(--amber);
   border-bottom-color: var(--amber);
   font-weight: 700;
 }
+/* 각 섹션 anchor 오프셋 — sticky nav 높이만큼 올림 */
+.chapter-anchor {
+  display: block;
+  position: relative;
+  top: -56px;
+  visibility: hidden;
+  pointer-events: none;
+}
 @media(max-width:600px){
-  .nav-btn { font-size: .68rem; padding: .65rem .3rem; }
+  .nav-btn { font-size: .65rem; padding: .65rem .2rem; }
+  .chapter-anchor { top: -48px; }
 }
 
 </style>
@@ -170,15 +182,16 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 
 <nav class="sticky-nav" id="sticky-nav">
-  <button class="nav-btn active" onclick="scrollTo('interp')">🎙️ 통번역</button>
-  <button class="nav-btn" onclick="scrollTo('tech')">💻 Tech 로컬화</button>
-  <button class="nav-btn" onclick="scrollTo('prod')">🎬 프로덕션 PM</button>
+  <a class="nav-btn active" href="#interp">🎙️ 통번역</a>
+  <a class="nav-btn" href="#tech">💻 Tech 로컬화</a>
+  <a class="nav-btn" href="#prod">🎬 프로덕션 PM</a>
 </nav>
 
 <div class="wrap">
 
 <!-- ══ 1. 통번역 ══ -->
-<div class="chapter" id="interp">
+<span class="chapter-anchor" id="interp"></span>
+<div class="chapter">
   <span class="chapter-emoji">🎙️</span>
   <span class="chapter-title">통번역 · 동시통역</span>
 </div>
@@ -414,7 +427,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 </div>
 
 <!-- ══ 2. TECH 로컬화 ══ -->
-<div class="chapter" id="tech">
+<span class="chapter-anchor" id="tech"></span>
+<div class="chapter">
   <span class="chapter-emoji">💻</span>
   <span class="chapter-title">Tech 로컬라이제이션</span>
 </div>
@@ -506,7 +520,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 </div>
 
 <!-- ══ 3. 프로덕션 PM ══ -->
-<div class="chapter" id="prod">
+<span class="chapter-anchor" id="prod"></span>
+<div class="chapter">
   <span class="chapter-emoji">🎬</span>
   <span class="chapter-title">프로덕션 PM</span>
 </div>
@@ -662,16 +677,15 @@ function lb(el){document.getElementById('lb-img').src=el.querySelector('img').sr
 function lbClose(){document.getElementById('lb').classList.remove('on')}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lbClose()})
 
-function scrollTo(id){
-  const el = document.getElementById(id);
-  if(!el) return;
-  const nav = document.getElementById('sticky-nav');
-  const offset = nav ? nav.offsetHeight + 8 : 8;
-  const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
-  window.scrollTo({top, behavior:'smooth'});
-}
+// nav 클릭 시 active 상태 즉시 반영
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
 
-// IntersectionObserver로 현재 섹션 감지 → nav 버튼 active 업데이트
+// IntersectionObserver — 스크롤 위치에 따라 nav active 자동 업데이트
 const sections = ['interp','tech','prod'];
 const navBtns = document.querySelectorAll('.nav-btn');
 
@@ -679,12 +693,13 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       const id = entry.target.id;
-      navBtns.forEach((btn,i) => {
-        btn.classList.toggle('active', sections[i] === id);
-      });
+      const idx = sections.indexOf(id);
+      if(idx !== -1){
+        navBtns.forEach((btn,i) => btn.classList.toggle('active', i === idx));
+      }
     }
   });
-}, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+}, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
 
 sections.forEach(id => {
   const el = document.getElementById(id);
@@ -693,6 +708,7 @@ sections.forEach(id => {
 </script>
 </body>
 </html>
+
 
 
 
