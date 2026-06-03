@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>김두우리 | 통번역 · Tech 로컬화 · 프로덕션 PM</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f7f5f0;--white:#fff;--dark:#1a1a1a;--mid:#555;--muted:#999;--border:#e8e4dc;
+  --bg:#ffffff;--white:#fff;--dark:#1a1a1a;--mid:#555;--muted:#999;--border:#e8e4dc;
   --amber:#b8750a;--amber-bg:#fdf3e0;--amber-mid:#f0c060;
   --teal:#0f6e56;--teal-bg:#e4f4ef;
   --blue:#1a4f8a;--blue-bg:#e8f0fa;
@@ -19,24 +20,21 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 /* HERO */
 .hero{background:var(--dark);padding:2.2rem 1.5rem 1.8rem;text-align:center}
-.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,8vw,3.8rem);letter-spacing:.08em;color:var(--amber-mid);line-height:1;margin-bottom:.4rem}
+.hero-name{font-family:'Pretendard',sans-serif;font-size:clamp(2rem,8vw,3.6rem);font-weight:800;letter-spacing:-.02em;color:var(--amber-mid);line-height:1.1;margin-bottom:.4rem}
 .hero-role{font-size:clamp(.62rem,2vw,.78rem);color:#aaa;letter-spacing:.14em;margin-bottom:1rem}
 .hero-langs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
 .lang-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#ccc;font-size:.73rem;padding:4px 12px;border-radius:20px}
 
-.wrap{max-width:800px;margin:0 auto;padding:0 1rem 4rem}
+.wrap{max-width:960px;margin:0 auto;padding:0 2rem 4rem}
 
 .chapter{display:flex;align-items:center;gap:.6rem;margin:3rem 0 .3rem;padding-bottom:.7rem;border-bottom:2px solid var(--border)}
 .chapter-emoji{font-size:1.4rem}
-.chapter-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,5vw,2rem);letter-spacing:.06em}
+.chapter-title{font-family:'Pretendard',sans-serif;font-size:clamp(1.5rem,5vw,2rem);font-weight:700;letter-spacing:-.02em}
 .chapter-desc{font-size:.83rem;color:var(--mid);line-height:1.75;margin-bottom:.7rem}
 
 .pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem}
 .pill{font-size:.7rem;font-weight:500;padding:3px 9px;border-radius:20px}
-.pa{background:var(--amber-bg);color:var(--amber)}
-.pt{background:var(--teal-bg);color:var(--teal)}
-.pb{background:var(--blue-bg);color:var(--blue)}
-.pp{background:var(--purple-bg);color:var(--purple)}
+.pa,.pt,.pb,.pp{background:#f0f0f0;color:#444}
 
 .callout{border-left:3px solid var(--blue);background:var(--blue-bg);border-radius:0 var(--rs) var(--rs) 0;padding:.8rem 1rem;margin:.8rem 0 1rem;font-size:.82rem;color:#0e2d56;line-height:1.7}
 .callout strong{color:var(--blue)}
@@ -99,7 +97,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 
 /* CTA */
 .cta{background:var(--dark);border-radius:var(--r);padding:2rem 1.5rem;text-align:center;margin-top:3rem}
-.cta-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.08em;color:var(--amber-mid);margin-bottom:.35rem}
+.cta-title{font-family:'Pretendard',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--amber-mid);margin-bottom:.35rem}
 .cta-sub{font-size:.8rem;color:#aaa;margin-bottom:1.2rem}
 .cta-btn{display:inline-block;background:var(--amber);color:#fff;font-size:.85rem;font-weight:700;padding:.7rem 1.8rem;border-radius:6px;text-decoration:none}
 .cta-btn:hover{background:#9a6208}
@@ -152,7 +150,7 @@ html, body { scroll-behavior: smooth; }
   border-bottom-color: var(--amber);
   font-weight: 700;
 }
-/* 각 섹션 anchor 오프셋 — sticky nav 높이만큼 올림 */
+/* 각 섹션 anchor 오프셋: sticky nav 높이만큼 올림 */
 .chapter-anchor {
   display: block;
   position: relative;
@@ -173,10 +171,10 @@ html, body { scroll-behavior: smooth; }
   <div class="hero-name">김두우리 · Douri Kim</div>
   <div class="hero-role">INTERPRETATION · TECH LOCALIZATION · PRODUCTION PM</div>
   <div class="hero-langs">
-    <span class="lang-pill">🇰🇷 한국어</span>
-    <span class="lang-pill">🇫🇷 Français</span>
-    <span class="lang-pill">🇬🇧 English</span>
-    <span class="lang-pill">🇧🇷 Português</span>
+    <span class="lang-pill">한국어</span>
+    <span class="lang-pill">Français</span>
+    <span class="lang-pill">English</span>
+    <span class="lang-pill">Português</span>
   </div>
 </div>
 
@@ -197,9 +195,9 @@ html, body { scroll-behavior: smooth; }
 </div>
 <p class="chapter-desc">엔터테인먼트, 문화 사업 & 행사, 기업 및 공공 기관 사업 미팅, 아티스트 홍보, 영화 시나리오 및 스크립트 · 2011년~ 프리랜서</p>
 <div class="pills">
-  <span class="pill pa">🇰🇷↔🇫🇷 순차·동시통역</span>
-  <span class="pill pa">🇰🇷↔🇬🇧</span>
-  <span class="pill pa">🇧🇷↔🇫🇷</span>
+  <span class="pill pa">한↔불 순차·동시통역</span>
+  <span class="pill pa">한↔영</span>
+  <span class="pill pa">포↔불</span>
   <span class="pill pt">기업 VIP 현장 통역</span>
   <span class="pill pt">아티스트 투어 동행</span>
   <span class="pill pt">영화제·공연 현장</span>
@@ -218,11 +216,10 @@ html, body { scroll-behavior: smooth; }
       <div class="c-meta">더라인 영상번역 아카데미 | 온라인</div>
       <div class="c-body">
         <ul>
-          <li>영어→한국어 영상번역가 입문 과정 — 넷플릭스·왓챠·웨이브·디즈니플러스 등 OTT 플랫폼 기준 번역 실무</li>
+          <li>영어→한국어 영상번역가 입문 과정: 넷플릭스·왓챠·웨이브·디즈니플러스 등 OTT 플랫폼 기준 번역 실무</li>
           <li>영상번역의 특수성 이해 (화면 싱크, 두 줄 제한, 구어체 표현) · 실전 피드백 중심 트레이닝</li>
-          <li>강사 함혜숙 — 2000년도 입문, 영어권·중화권 영화 번역 활동 · 저서 &lt;영상번역가로 산다는 것&gt;</li>
         </ul>
-        <div class="cert">🎓 수료 — 더라인 영상번역 아카데미 영어 영상번역 입문반</div>
+        <div class="cert">🎓 수료: 더라인 영상번역 아카데미 영어 영상번역 입문반</div>
         <div class="logos" style="margin-top:.7rem">
           <div class="logos-label">기관</div>
           <div class="logos-row">
@@ -241,13 +238,12 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">기업 VIP 행사 · 2025</div>
-      <div class="c-title">LG전자 트립 행사 — 프랑스 VIP 현장 순차통역</div>
+      <div class="c-title">LG전자 트립 행사: 프랑스 VIP 현장 순차통역</div>
       <div class="c-meta">서울 · 부산 · 마곡 · 하남 | 5박 6일</div>
       <div class="c-body">
         <ul>
           <li>LG 평택 칠러 공장 쇼룸·라인 투어, 창원 공장 제조 라인 투어</li>
           <li>하남 스타필드 레퍼런스 사이트 방문, 마곡 사이언스파크 시설 투어</li>
-          <li>VIP 레스토랑 · 공식 만찬 · 서울 관광 전 일정 동행</li>
         </ul>
         <div class="logos">
           <div class="logos-label">클라이언트</div>
@@ -268,8 +264,8 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">영한 번역 · 2011~</div>
-      <div class="c-title">한-불 영상·문화 콘텐츠 번역 — PPM · 자막 · 시나리오</div>
-      <div class="c-meta">🇫🇷🇰🇷 파리 & 서울 | 프리랜서, 2011년~</div>
+      <div class="c-title">한-불 영상·문화 콘텐츠 번역: PPM · 자막 · 시나리오</div>
+      <div class="c-meta">한-불 파리 & 서울 | 프리랜서, 2011년~</div>
       <div class="c-body">
         <ul>
           <li>PPM(Pre-Production Meeting) 문서, 웹사이트, 자막, 시나리오/스크립트 번역</li>
@@ -281,7 +277,7 @@ html, body { scroll-behavior: smooth; }
         <div class="logos">
           <div class="logos-label">클라이언트</div>
           <div class="logos-row">
-            <span class="logo-txt">🎷 자라섬 Jazz Festival</span>
+            <span class="logo-txt">자라섬 Jazz Festival</span>
             <span class="logo-txt">The French Connection</span>
             <span class="logo-txt">Elephant at Work</span>
             <span class="logo-txt">Renault-Samsung</span>
@@ -300,9 +296,9 @@ html, body { scroll-behavior: smooth; }
 <div class="card">
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">공공 기관 · 2021</div>
-      <div class="c-title">Santo André 시청 — 지속가능 도시 모빌리티 PT↔FR</div>
-      <div class="c-meta">🇧🇷 Santo André, São Paulo</div>
+      <div class="c-tag">공공 기관 회의 순차통역 · 2021</div>
+      <div class="c-title">Santo André 시청: 지속가능 도시 모빌리티 PT↔FR</div>
+      <div class="c-meta">Santo André, São Paulo</div>
       <div class="c-body">
         <ul>
           <li>상파울루 주 산투안드레 시청 지속가능 프로젝트 통역 참여</li>
@@ -328,8 +324,8 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">영화제 · 2016</div>
-      <div class="c-title">FID Marseille — 홍상수 감독 회고전</div>
-      <div class="c-meta">🇫🇷 Festival International de Documentaire, Marseille</div>
+      <div class="c-title">FID Marseille: 홍상수 감독 회고전</div>
+      <div class="c-meta">Festival International de Documentaire, Marseille</div>
       <div class="c-body">
         <ul>
           <li>마르세유 국제영화제 FID Marseille에서 홍상수 감독 회고전 통역</li>
@@ -351,14 +347,14 @@ html, body { scroll-behavior: smooth; }
 <div class="card">
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">K-pop 아티스트 파리 · 2011–2012</div>
-      <div class="c-title">2NE1 · PSY · SM Town — 아티스트 투어 동행</div>
-      <div class="c-meta">🇫🇷 Cannes · Paris</div>
+      <div class="c-tag">K-pop 아티스트 · 2011–2012</div>
+      <div class="c-title">2NE1 · PSY · SM Town: 아티스트 투어 동행</div>
+      <div class="c-meta">Cannes · Paris</div>
       <div class="c-body">
         <ul>
-          <li><strong>2NE1</strong> — Cannes Lions 컨퍼런스 동행 · 패션 매거진 W 화보 촬영 (2012)</li>
-          <li><strong>PSY</strong> — 갱남스타일 월드투어 파리 홍보 코디 · Universal Music France (2012)</li>
-          <li><strong>SM Town</strong> — 파리 제니스 공연 조명팀 코디네이션 (2011)</li>
+          <li><strong>2NE1</strong>: Cannes Lions 컨퍼런스 동행 · 패션 매거진 W 화보 촬영 (2012)</li>
+          <li><strong>PSY</strong>: 갱남스타일 월드투어 파리 홍보 코디 · Universal Music France (2012)</li>
+          <li><strong>SM Town</strong>: 파리 제니스 공연 조명팀 코디네이션 (2011)</li>
         </ul>
         <div class="video-links">
           <a class="vlink yt" href="https://bit.ly/WVkmHP" target="_blank">▶ 2NE1 Cannes</a>
@@ -386,8 +382,8 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">다큐멘터리 · 2011</div>
-      <div class="c-title">나윤선 — 스위스·한국 공동제작 다큐 번역 코디</div>
-      <div class="c-meta">🇨🇭🇰🇷 6개국 로케이션 (프/벨/독/스위스/스웨덴/한국)</div>
+      <div class="c-title">재즈 아티스트 나윤선: 스위스·한국 공동제작 다큐 번역 코디</div>
+      <div class="c-meta">스위스·한국 6개국 로케이션 (프/벨/독/스위스/스웨덴/한국)</div>
       <div class="c-body">
         <ul>
           <li>한국어 / 영어 / 프랑스어 인터뷰 번역 · 리뷰 · 로케이션 관리</li>
@@ -406,8 +402,8 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">페스티벌 어시스턴트 · 2009</div>
-      <div class="c-title">자라섬 국제 재즈 페스티벌 — 아트 디렉터 어시스턴트</div>
-      <div class="c-meta">🇰🇷 가평 · 제6회 | 3일간 15만 관객 · 5개 무대 · 50개 공연</div>
+      <div class="c-title">자라섬 국제 재즈 페스티벌: 아트 디렉터 어시스턴트</div>
+      <div class="c-meta">가평 · 제6회 | 3일간 15만 관객 · 5개 무대 · 50개 공연</div>
       <div class="c-body">
         <ul>
           <li>라인업 기획 참여 · 테크니컬 라이더 · 머천다이징 관리</li>
@@ -415,7 +411,7 @@ html, body { scroll-behavior: smooth; }
         </ul>
         <div class="logos">
           <div class="logos-label">클라이언트</div>
-          <div class="logos-row"><span class="logo-txt">🎷 자라섬 International Jazz Festival</span></div>
+          <div class="logos-row"><span class="logo-txt">자라섬 International Jazz Festival</span></div>
         </div>
       </div>
     </div>
@@ -446,12 +442,12 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner no-img">
     <div class="card-text">
       <div class="c-tag">STT 품질 향상 · 2025</div>
-      <div class="c-title">LG AICC — 벨기에 🇧🇪 프랑스어 STT 검수</div>
+      <div class="c-title">LG AICC: 벨기에 BE 프랑스어 STT 검수</div>
       <div class="c-meta">LG전자 AICC | 벨기에 (프랑스어)</div>
       <div class="c-body">
         <ul>
           <li>가전제품 상담 음성 30개 (평균 10분, 최대 20분) 화자별 스크립트 검수</li>
-          <li>AI 자동 STT 결과 정확도 검수 — 다빈도 오인식 키워드 분류</li>
+          <li>AI 자동 STT 결과 정확도 검수: 다빈도 오인식 키워드 분류</li>
           <li>오인식 키워드 기반 학습용 문장 데이터 생성</li>
         </ul>
         <div class="logos">
@@ -469,7 +465,7 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">사이버보안 SaaS · 2023–2024</div>
-      <div class="c-title">AI Spera — Criminal IP 글로벌 로컬화 총괄</div>
+      <div class="c-title">AI Spera: Criminal IP 글로벌 로컬화 총괄</div>
       <div class="c-meta">한 / 영 / 불 / 일 / 아랍어 5개국어</div>
       <div class="c-body">
         <ul>
@@ -498,8 +494,8 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">모바일 앱 로컬화 · 2013–2014</div>
-      <div class="c-title">Ultra Interactive — 프랑스어 로컬화 코디네이터</div>
-      <div class="c-meta">🇰🇷→🇫🇷 | 서울 & 파리</div>
+      <div class="c-title">Ultra Interactive: 프랑스어 로컬화 코디네이터</div>
+      <div class="c-meta">한→불 | 서울 & 파리</div>
       <div class="c-body">
         <ul>
           <li>한국 개발 소셜 앱 3개 전 단계 로컬화 총괄 · 60만+ 유저 달성</li>
@@ -527,7 +523,7 @@ html, body { scroll-behavior: smooth; }
 </div>
 <p class="chapter-desc">뮤지컬 촬영, 광고 영상, 아티스트 투어, 마케팅 이벤트 · 한-불 크로스보더 2011~2016</p>
 <div class="callout">
-  🎓 <strong>MBA in Audiovisual Production</strong> — ESG 그랑제꼴, 파리 (2012)<br>
+  🎓 <strong>MBA in Audiovisual Production</strong>: ESG 그랑제꼴, 파리 (2012)<br>
   <span style="font-size:.78rem;opacity:.85;">논문 : <em>What digital is going to change for film distributors and movie theater operators?</em></span>
 </div>
 <div class="pills">
@@ -549,8 +545,8 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">3D4K 촬영 · 2016</div>
-      <div class="c-title">뮤지컬 '아서왕의 전설' 3D4K — 1st 어시스턴트 총괄</div>
-      <div class="c-meta">🇫🇷 파리 팔레 데 콩그레 (3,700석)</div>
+      <div class="c-title">뮤지컬 '아서왕의 전설' 3D4K: 1st 어시스턴트 총괄</div>
+      <div class="c-meta">파리 팔레 데 콩그레 (3,700석)</div>
       <div class="c-body">
         <ul>
           <li>한국 촬영팀 콘티 번역 · 프랑스 오퍼레이션 팀 기술 세팅 조율</li>
@@ -577,8 +573,8 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">3D4K 촬영 · 2015</div>
-      <div class="c-title">Cirque du Soleil 'Odysseo' — 촬영 코디네이터</div>
-      <div class="c-meta">🇺🇸 미국 현지 촬영 | Cavalia × Fabulous 공동제작</div>
+      <div class="c-title">Cirque du Soleil 'Odysseo': 촬영 코디네이터</div>
+      <div class="c-meta">미국 현지 촬영 | Cavalia × Fabulous 공동제작</div>
       <div class="c-body">
         <ul>
           <li>신기술 미디어 전문 제작사 Fabulous와 협력, 3D4K 촬영 코디네이터</li>
@@ -606,11 +602,11 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner">
     <div class="card-text">
       <div class="c-tag">Korean Air 프로젝트 · 2015</div>
-      <div class="c-title">Korean Air 'Guest House' — 프랑스 7개 도시 코디네이터</div>
-      <div class="c-meta">🇫🇷 프랑스 7개 도시</div>
+      <div class="c-title">Korean Air 'Guest House': 프랑스 7개 도시 코디네이터</div>
+      <div class="c-meta">프랑스 7개 도시</div>
       <div class="c-body">
         <ul>
-          <li>대한항공 주최 — 프랑스 7개 도시 독특한 숙박 경험 제공 콘테스트</li>
+          <li>대한항공 주최: 프랑스 7개 도시 독특한 숙박 경험 제공 콘테스트</li>
           <li>특별 숙소 리서치 · 예산 산정 · 현지 협상 · SNS 커뮤니케이션</li>
           <li>승인 후 키스톤 필름이 각 도시 트레일러 촬영</li>
         </ul>
@@ -635,7 +631,7 @@ html, body { scroll-behavior: smooth; }
   <div class="card-inner no-img">
     <div class="card-text">
       <div class="c-tag">인턴십 · 2011–2012</div>
-      <div class="c-title">프랑스 디지털 음악 시장 — Mp3 마케팅 어시스턴트</div>
+      <div class="c-title">프랑스 디지털 음악 시장: Mp3 마케팅 어시스턴트</div>
       <div class="c-meta">🇫🇷 파리 | Ciné Culture · UGC Networks · SFR · Fnac</div>
       <div class="c-body">
         <ul>
@@ -685,7 +681,7 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
   });
 });
 
-// IntersectionObserver — 스크롤 위치에 따라 nav active 자동 업데이트
+// IntersectionObserver: 스크롤 위치에 따라 nav active 자동 업데이트
 const sections = ['interp','tech','prod'];
 const navBtns = document.querySelectorAll('.nav-btn');
 
@@ -708,6 +704,7 @@ sections.forEach(id => {
 </script>
 </body>
 </html>
+
 
 
 
