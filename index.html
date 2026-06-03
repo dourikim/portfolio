@@ -44,8 +44,32 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 .stat-n{font-size:1.2rem;font-weight:700;color:var(--amber);line-height:1.1}
 .stat-l{font-size:.62rem;color:var(--muted);margin-top:2px}
 
-.sublabel{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#333;display:flex;align-items:center;gap:8px;margin:1.8rem 0 .8rem;font-family:'Pretendard',sans-serif}
+.sublabel{font-size:1rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--color-text-primary, #1a1a1a);display:flex;align-items:center;gap:10px;margin:2rem 0 .9rem;font-family:'Pretendard',sans-serif}
 .sublabel::after{content:'';flex:1;height:1px;background:var(--border)}
+
+
+/* CARD HEADER — 옵션 A 앰버 상단 스트립 */
+.card-header{
+  background:#FAEEDA;
+  padding:.45rem 1.2rem;
+  border-bottom:0.5px solid #FAC775;
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+}
+.card-header-cat{
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#854F0B;
+  font-family:'Pretendard',sans-serif;
+}
+.card-header-year{
+  font-size:.72rem;
+  font-weight:500;
+  color:#BA7517;
+}
 
 /* CARD */
 .card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:.8rem;overflow:hidden;transition:box-shadow .2s}
@@ -54,7 +78,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--dark
 .card-inner.no-img{grid-template-columns:1fr}
 .card-text{padding:1rem 1.2rem}
 
-.c-tag{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.c-tag{display:none}
 .c-title{font-size:.93rem;font-weight:700;color:var(--dark);line-height:1.4;margin-bottom:.2rem}
 .c-meta{font-size:.72rem;color:var(--muted);margin-bottom:.45rem}
 .c-body{font-size:.8rem;color:var(--mid);line-height:1.65}
@@ -209,9 +233,13 @@ html, body { scroll-behavior: smooth; }
 <div class="sublabel">자격 및 수료</div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">영상번역 교육</span>
+    <span class="card-header-year">· 2025</span>
+  </div>
   <div class="card-inner no-img">
     <div class="card-text">
-      <div class="c-tag">영상번역 교육 · 2025</div>
+      
       <div class="c-title">함혜숙 영어 영상번역 입문 과정 수료</div>
       <div class="c-meta">더라인 영상번역 아카데미 | 온라인</div>
       <div class="c-body">
@@ -235,9 +263,13 @@ html, body { scroll-behavior: smooth; }
 <div class="sublabel">최근 수행</div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">기업 VIP 행사</span>
+    <span class="card-header-year">· 2025</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">기업 VIP 행사 · 2025</div>
+      
       <div class="c-title">LG전자 트립 행사: 프랑스 VIP 현장 순차통역</div>
       <div class="c-meta">서울 · 부산 · 마곡 · 하남 | 5박 6일</div>
       <div class="c-body">
@@ -261,9 +293,13 @@ html, body { scroll-behavior: smooth; }
 <div class="sublabel">문화 · 엔터테인먼트</div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">영한 번역</span>
+    <span class="card-header-year">· 2011~</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">영한 번역 · 2011~</div>
+      
       <div class="c-title">한-불 영상·문화 콘텐츠 번역: PPM · 자막 · 시나리오</div>
       <div class="c-meta">한-불 파리 & 서울 | 프리랜서, 2011년~</div>
       <div class="c-body">
@@ -294,9 +330,13 @@ html, body { scroll-behavior: smooth; }
 </div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">공공 기관 회의 순차통역</span>
+    <span class="card-header-year">· 2021</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">공공 기관 회의 순차통역 · 2021</div>
+      
       <div class="c-title">Santo André 시청: 지속가능 도시 모빌리티 PT↔FR</div>
       <div class="c-meta">Santo André, São Paulo</div>
       <div class="c-body">
@@ -321,9 +361,13 @@ html, body { scroll-behavior: smooth; }
 </div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">영화제</span>
+    <span class="card-header-year">· 2016</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">영화제 · 2016</div>
+      
       <div class="c-title">FID Marseille: 홍상수 감독 회고전</div>
       <div class="c-meta">Festival International de Documentaire, Marseille</div>
       <div class="c-body">
@@ -345,9 +389,13 @@ html, body { scroll-behavior: smooth; }
 </div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">K-pop 아티스트</span>
+    <span class="card-header-year">· 2011–2012</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">K-pop 아티스트 · 2011–2012</div>
+      
       <div class="c-title">2NE1 · PSY · SM Town: 아티스트 투어 동행</div>
       <div class="c-meta">Cannes · Paris</div>
       <div class="c-body">
@@ -379,9 +427,13 @@ html, body { scroll-behavior: smooth; }
 </div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">다큐멘터리</span>
+    <span class="card-header-year">· 2011</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">다큐멘터리 · 2011</div>
+      
       <div class="c-title">재즈 아티스트 나윤선: 스위스·한국 공동제작 다큐 번역 코디</div>
       <div class="c-meta">스위스·한국 6개국 로케이션 (프/벨/독/스위스/스웨덴/한국)</div>
       <div class="c-body">
@@ -399,9 +451,13 @@ html, body { scroll-behavior: smooth; }
 </div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">페스티벌 어시스턴트</span>
+    <span class="card-header-year">· 2009</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">페스티벌 어시스턴트 · 2009</div>
+      
       <div class="c-title">자라섬 국제 재즈 페스티벌: 아트 디렉터 어시스턴트</div>
       <div class="c-meta">가평 · 제6회 | 3일간 15만 관객 · 5개 무대 · 50개 공연</div>
       <div class="c-body">
@@ -440,9 +496,13 @@ html, body { scroll-behavior: smooth; }
 <div class="sublabel">최근 수행</div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">STT 품질 향상</span>
+    <span class="card-header-year">· 2025</span>
+  </div>
   <div class="card-inner no-img">
     <div class="card-text">
-      <div class="c-tag">STT 품질 향상 · 2025</div>
+      
       <div class="c-title">LG AICC: 벨기에 BE 프랑스어 STT 검수</div>
       <div class="c-meta">LG전자 AICC | 벨기에 (프랑스어)</div>
       <div class="c-body">
@@ -463,9 +523,13 @@ html, body { scroll-behavior: smooth; }
 <div class="sublabel">주요 프로젝트</div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">사이버 보안 검색 엔진</span>
+    <span class="card-header-year">· 2023–2024</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">사이버 보안 검색 엔진 · 2023–2024</div>
+      
       <div class="c-title">AI Spera: Criminal IP 글로벌 로컬화 총괄</div>
       <div class="c-meta">한 / 영 / 불 / 일 / 아랍어 5개국어</div>
       <div class="c-body">
@@ -493,9 +557,13 @@ html, body { scroll-behavior: smooth; }
 </div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">모바일 앱 로컬화</span>
+    <span class="card-header-year">· 2013–2014</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">모바일 앱 로컬화 · 2013–2014</div>
+      
       <div class="c-title">Ultra Interactive: 프랑스어 로컬화 코디네이터</div>
       <div class="c-meta">한→불 | 서울 & 파리</div>
       <div class="c-body">
@@ -544,9 +612,13 @@ html, body { scroll-behavior: smooth; }
 <div class="sublabel">뮤지컬 · 공연 촬영</div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">3D4K 촬영</span>
+    <span class="card-header-year">· 2016</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">3D4K 촬영 · 2016</div>
+      
       <div class="c-title">뮤지컬 '아서왕의 전설' 3D4K: 1st 어시스턴트 총괄</div>
       <div class="c-meta">파리 팔레 데 콩그레 (3,700석)</div>
       <div class="c-body">
@@ -572,9 +644,13 @@ html, body { scroll-behavior: smooth; }
 </div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">3D4K 촬영</span>
+    <span class="card-header-year">· 2015</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">3D4K 촬영 · 2015</div>
+      
       <div class="c-title">Cirque du Soleil 'Odysseo': 촬영 코디네이터</div>
       <div class="c-meta">미국 현지 촬영 | Cavalia × Fabulous 공동제작</div>
       <div class="c-body">
@@ -601,9 +677,13 @@ html, body { scroll-behavior: smooth; }
 <div class="sublabel">문화 프로젝트 · 아티스트 투어</div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">Korean Air 프로젝트</span>
+    <span class="card-header-year">· 2015</span>
+  </div>
   <div class="card-inner">
     <div class="card-text">
-      <div class="c-tag">Korean Air 프로젝트 · 2015</div>
+      
       <div class="c-title">Korean Air 'Guest House': 프랑스 7개 도시 코디네이터</div>
       <div class="c-meta">프랑스 7개 도시</div>
       <div class="c-body">
@@ -629,9 +709,13 @@ html, body { scroll-behavior: smooth; }
 <div class="sublabel">마케팅 · 디지털 음악</div>
 
 <div class="card">
+  <div class="card-header">
+    <span class="card-header-cat">인턴십</span>
+    <span class="card-header-year">· 2011–2012</span>
+  </div>
   <div class="card-inner no-img">
     <div class="card-text">
-      <div class="c-tag">인턴십 · 2011–2012</div>
+      
       <div class="c-title">프랑스 디지털 음악 시장: Mp3 마케팅 어시스턴트</div>
       <div class="c-meta">🇫🇷 파리 | Ciné Culture · UGC Networks · SFR · Fnac</div>
       <div class="c-body">
@@ -705,6 +789,7 @@ sections.forEach(id => {
 </script>
 </body>
 </html>
+
 
 
 
